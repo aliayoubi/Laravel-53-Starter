@@ -23,5 +23,5 @@ Packages Included:
 - [laracasts/PHP-Vars-To-Js-Transformer](https://github.com/laracasts/PHP-Vars-To-Js-Transformer "") Transform PHP types to JavaScript
 - [mewebstudio/Purifier](https://github.com/mewebstudio/Purifier "") HTMLPurifier for Laravel 5
 - [malhal/Laravel-CreatedBy](https://github.com/malhal/Laravel-CreatedBy "") A trait that adds createdBy and updatedBy user relations to your models.
-- [michaeldyrynda/laravel-owns-models](https://github.com/michaeldyrynda/laravel-owns-models "") Trait that allows you to determine whether the using model owns some other model.
+- [michaeldyrynda/laravel-owns-models](https://github.com/michaeldyrynda/laravel-owns-models "") Trait that allows to determine whether using model owns some other model.
 - [michaeldyrynda/laravel-cascade-soft-deletes](https://github.com/michaeldyrynda/laravel-cascade-soft-deletes "") Cascading deletes for Eloquent models that implement soft deletes
