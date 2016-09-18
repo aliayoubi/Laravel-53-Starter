@@ -16,3 +16,4 @@ vendor/*/tests
 /_ide_helper.php
 /composer.lock
 /PUSH.SH
+/todo.txt
