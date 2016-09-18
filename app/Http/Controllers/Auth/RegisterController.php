@@ -72,6 +72,6 @@ class RegisterController extends Controller
 
         list($status, $instance) = $user;
 
-        return $instance;
+        return $status ? $instance : $repository;
     }
 }
