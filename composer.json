@@ -15,7 +15,6 @@
     "yajra/laravel-datatables-oracle": "~6.0",
     "davejamesmiller/laravel-breadcrumbs": "^3.0",
     "watson/active": "^2.0",
-    "watson/rememberable": "^1.0",
     "laravelbook/ardent": "^3.4",
     "itsgoingd/clockwork": "^1.12",
     "eusonlito/laravel-packer": "^2.1",
