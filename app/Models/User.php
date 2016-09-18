@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
-class User extends BaseModel implements AuthenticatableContract, CanResetPasswordContract
+class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
     use Authenticatable;
     use CanResetPassword;
@@ -33,15 +34,5 @@ class User extends BaseModel implements AuthenticatableContract, CanResetPasswor
     protected $hidden = [
         'password',
         'remember_token',
-    ];
-
-    /**
-     * The validation rules.
-     *
-     * @var array
-     */
-    public static $rules = [
-        'email' => 'required|email',
-        'password' => 'sometimes|confirmed|min:6',
     ];
 }

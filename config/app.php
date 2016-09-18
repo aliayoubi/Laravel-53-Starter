@@ -167,6 +167,7 @@ return [
          * Package Service Providers...
          */
 
+        Rinvex\Repository\Providers\RepositoryServiceProvider::class,
         AdamWathan\Form\FormServiceProvider::class,
         Kris\LaravelFormBuilder\FormBuilderServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,

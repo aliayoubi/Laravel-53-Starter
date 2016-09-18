@@ -36,9 +36,5 @@ class BaseModel extends Ardent
     public function __construct($attributes = [])
     {
         parent::__construct($attributes);
-
-        $this->purgeFilters[] = function ($key) {
-            return !in_array($key, $this->purgeFields);
-        };
     }
 }
