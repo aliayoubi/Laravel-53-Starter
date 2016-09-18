@@ -11,7 +11,7 @@ Route::get('applogs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')
 ### PUBLIC ROUTES START ###
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.home.welcome');
 });
 
 ### PUBLIC ROUTES END ###
