@@ -1,0 +1,17 @@
+/node_modules
+npm-debug.log
+/public/storage
+/vendor
+/.idea
+Homestead.json
+Homestead.yaml
+/.svn
+
+/public/storage/cache
+vendor/.git
+vendor/*/test
+vendor/*/tests
+/bootstrap/cache/
+/.phpstorm.meta.php
+/_ide_helper.php
+/composer.lock
