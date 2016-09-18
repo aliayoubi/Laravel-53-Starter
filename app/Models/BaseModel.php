@@ -8,14 +8,18 @@
 
 namespace App\Models;
 
+use Iatstuti\Database\Support\CascadeSoftDeletes;
+use Iatstuti\Database\Support\OwnsModels;
 use LaravelArdent\Ardent\Ardent;
 use Propaganistas\LaravelFakeId\FakeIdTrait;
 use Watson\Rememberable\Rememberable;
 
 class BaseModel extends Ardent
 {
-    use Rememberable;       // for cache
-    use FakeIdTrait;        // for hashed ids in urls for safety
+    use Rememberable;           // for cache
+    use FakeIdTrait;            // for hashed ids in urls for safety
+    use OwnsModels;             // to identify resource owner
+    use CascadeSoftDeletes;     // to be used along with LV's SoftDelete trait.
 
     // purgable fields
     public $purgeFields = [];

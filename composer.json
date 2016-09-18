@@ -29,7 +29,9 @@
     "themsaid/laravel-mail-preview": "^1.2",
     "laracasts/utilities": "^2.1",
     "mews/purifier": "^2.0",
-    "malhal/laravel-createdby": "dev-master"
+    "malhal/laravel-createdby": "dev-master",
+    "iatstuti/laravel-owns-models": "^1.0",
+    "iatstuti/laravel-cascade-soft-deletes": "^1.1"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",
