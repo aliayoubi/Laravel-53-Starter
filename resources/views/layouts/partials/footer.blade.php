@@ -1,3 +1,14 @@
+<footer class="page-footer grey">
+    <div class="footer-copyright">
+        <div class="container">
+            &copy; {{date('Y')}} {{config('app.name')}} - All rights reserved.
+            <a class="grey-text text-lighten-4 right" target="_blank" href="https://github.com/Dogfalo/materialize/blob/master/LICENSE">MIT
+                License
+            </a>
+        </div>
+    </div>
+</footer>
+
 <!-- Scripts -->
 {!! Packer::js([
 '/js/jquery.js',

@@ -2,7 +2,11 @@
 <body>
 @include('layouts.partials.nav')
 
+<main>
 <div class="container">
+    <div class="section"></div>
+    @yield('title')
+
     @include('flash::message')
     @include('sweet::alert')
     @include('shared.errors')
@@ -12,5 +16,6 @@
 
     @yield('content')
 </div>
+</main>
 
 @include('layouts.partials.footer')
