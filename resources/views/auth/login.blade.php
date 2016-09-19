@@ -4,27 +4,18 @@
     <div class="container">
         <div class="row">
 
-            @if (count($errors) > 0)
-                <div class="alert alert-danger animated shake">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-
             <div class="z-depth-1 card-panel grey lighten-4 row hoverable"
                  style="padding: 10px 30px 30px 30px; border: 1px solid #EEE;">
-                <h5 class="blue-text">Sign In To Your Account</h5>
+                <h5 class="blue-text"><i class="material-icons left">verified_user</i> Sign In To Your Account</h5>
+                <div class="divider"></div>
+                <div class="section"></div>
 
                 <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                     {{ csrf_field() }}
 
                     <div class='input-field col s12'>
                         <i class="prefix material-icons">email</i>
-                        <input id="email" type="email" class="validate form-control" name="email"
+                        <input id="email" type="email" class="validate" name="email"
                                value="{{ old('email') }}" required autofocus>
 
                         <label for="email" data-error="Wrong Email Type">E-Mail
@@ -39,7 +30,7 @@
 
                     <div class='input-field col s12'>
                         <i class="prefix material-icons">lock_outline</i>
-                        <input id="password" type="password" class="form-control" name="password"
+                        <input id="password" type="password" class="validate" name="password"
                                required>
                         <label for="password" data-error="Invalid Password">Password</label>
 
@@ -69,13 +60,13 @@
                     <div class="section"></div>
 
                     <div class="left">
-                        <a class="waves-effect waves-teal btn-flat pink-text" href="{{ url('/password/reset') }}">
+                        <a class="waves-effect btn-flat pink-text" href="{{ url('/password/reset') }}">
                             Forgot Password
                         </a>
                     </div>
 
                     <div class="right">
-                        <a class="waves-effect waves-teal btn-flat pink-text" href="{{ url('/register') }}">
+                        <a class="waves-effect btn-flat pink-text" href="{{ url('/register') }}">
                             Create Account
                         </a>
                     </div>

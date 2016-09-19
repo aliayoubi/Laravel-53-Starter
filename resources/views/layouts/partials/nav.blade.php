@@ -30,4 +30,3 @@
     </div>
 
 </nav>
-<div class="section"></div>

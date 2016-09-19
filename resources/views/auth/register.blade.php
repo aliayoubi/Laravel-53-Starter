@@ -3,95 +3,81 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
 
-                @if (count($errors) > 0)
-                    <div class="alert alert-danger animated shake">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+            <div class="z-depth-1 card-panel grey lighten-4 row hoverable"
+                 style="padding: 10px 30px 30px 30px; border: 1px solid #EEE;">
+                <h5 class="blue-text"><i class="material-icons left">perm_identity</i> Create Account</h5>
+                <div class="divider"></div>
 
-                <div class="panel panel-default">
-                    <div class="panel-heading">Register</div>
-                    <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
-                            {{ csrf_field() }}
+                <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                    {{ csrf_field() }}
 
-                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                <label for="name" class="col-md-4 control-label">Name</label>
+                    <div class='input-field col s12'>
 
-                                <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control" name="name"
-                                           value="{{ old('name') }}" required autofocus>
+                        <input id="name" type="text" class="validate" name="name"
+                               value="{{ old('name') }}" required autofocus>
 
-                                    @if ($errors->has('name'))
-                                        <span class="help-block">
+                        <label for="name" data-error="Name is required" class="control-label">Name</label>
+
+                        @if ($errors->has('name'))
+                            <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
-                                    @endif
-                                </div>
-                            </div>
+                        @endif
 
-                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                    </div>
 
-                                <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control" name="email"
-                                           value="{{ old('email') }}" required>
+                    <div class='input-field col s12'>
+                        <input autocomplete="off" id="email" type="email" class="validate" name="email"
+                               value="{{ old('email') }}" required>
 
-                                    @if ($errors->has('email'))
-                                        <span class="help-block">
+                        <label for="email" data-error="Wrong Email Type">E-Mail
+                            Address</label>
+
+                        @if ($errors->has('email'))
+                            <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
-                                    @endif
-                                </div>
-                            </div>
+                        @endif
+                    </div>
 
-                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                <label for="password" class="col-md-4 control-label">Password</label>
+                    <div class='input-field col s12'>
+                        <input autocomplete="off" id="password" type="password" class="validate" name="password" required>
+                        <label for="password" data-error="Invalid Password">Password</label>
 
-                                <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control" name="password" required>
-
-                                    @if ($errors->has('password'))
-                                        <span class="help-block">
+                        @if ($errors->has('password'))
+                            <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
-                                    @endif
-                                </div>
-                            </div>
+                        @endif
+                    </div>
 
-                            <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                                <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+                    <div class='input-field col s12'>
+                        <input autocomplete="off" id="password-confirm" type="password" class="validate"
+                               name="password_confirmation" required>
 
-                                <div class="col-md-6">
-                                    <input id="password-confirm" type="password" class="form-control"
-                                           name="password_confirmation" required>
+                        <label for="password-confirm" data-error="Invalid Password" class="control-label">Confirm Password</label>
 
-                                    @if ($errors->has('password_confirmation'))
-                                        <span class="help-block">
+                        @if ($errors->has('password_confirmation'))
+                            <span class="help-block">
                                         <strong>{{ $errors->first('password_confirmation') }}</strong>
                                     </span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        Register
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
+                        @endif
                     </div>
-                </div>
+
+                    <div class="center-align">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="material-icons left">send</i> Register
+                        </button>
+                    </div>
+
+                    <div class="right">
+                        <a class="waves-effect btn-flat pink-text" href="{{ url('/login') }}">
+                            Sign In
+                        </a>
+                    </div>
+
+                </form>
             </div>
         </div>
-    </div>
 @endsection

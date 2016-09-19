@@ -64,14 +64,12 @@ class RegisterController extends Controller
     {
         $repository = new UserRepository;
 
-        $user = $repository->create([
+        list($status, $instance) = $repository->create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
 
-        list($status, $instance) = $user;
-
-        return $status ? $instance : $repository;
+        return $instance;
     }
 }
