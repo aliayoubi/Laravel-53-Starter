@@ -1,21 +1,21 @@
-@include('layouts.partials.head')
+@include('layouts/partials/head')
 <body>
-@include('layouts.partials.nav')
+@include('layouts/partials/nav')
 
-<main>
-<div class="container">
-    <div class="section"></div>
-    @yield('title')
+<div class="mainbody container">
+    <div class="page-header text-center">
+        <h1 class="badge">@yield('title')</h1>
+    </div>
 
     @include('flash::message')
-    @include('sweet::alert')
     @include('shared.errors')
-    @include('popups.loader')
+    @include('sweet::alert')
 
-    <div class="section"></div>
+    <div class="clearfix">&nbsp;</div>
 
     @yield('content')
-</div>
-</main>
 
-@include('layouts.partials.footer')
+    @include('shared.loader')
+</div>
+
+@include('layouts/partials/footer')

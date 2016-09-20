@@ -26,3 +26,6 @@ Route::group(['middleware' => 'auth'], function () {
 
 ### AUTHENTICATED ROUTES END ###
 #===========================================================#
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

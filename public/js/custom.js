@@ -7,8 +7,11 @@
 
 $(function () {
 
-    $('.button-collapse').sideNav();
+    // hide loader
+    $('.loading-indicator-with-overlay').hide();
 
+    $.material.init();
+    
     var $dataTable = $('.dataTable');
 
     // avoid onkeyup search in datatables filter, use Enter button instead

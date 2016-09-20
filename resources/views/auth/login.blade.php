@@ -1,78 +1,79 @@
 @extends('layouts.app')
 
+@section('title')
+    Login to Your Account
+@endsection
 @section('content')
     <div class="container">
         <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-info">
+                    <div class="panel-heading"><i class="glyphicon glyphicon-lock"></i> Login Details</div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                            {{ csrf_field() }}
 
-            <div class="z-depth-1 card-panel grey lighten-4 row hoverable"
-                 style="padding: 10px 30px 30px 30px; border: 1px solid #EEE;">
-                <h5 class="blue-text"><i class="material-icons left">verified_user</i> Sign In To Your Account</h5>
-                <div class="divider"></div>
-                <div class="section"></div>
+                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
-                <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
-                    {{ csrf_field() }}
+                                <div class="col-md-6">
+                                    <input id="email" type="email" class="form-control" name="email"
+                                           value="{{ old('email') }}" autocomplete="off" required autofocus>
 
-                    <div class='input-field col s12'>
-                        <i class="prefix material-icons">email</i>
-                        <input id="email" type="email" class="validate" name="email"
-                               value="{{ old('email') }}" required autofocus>
-
-                        <label for="email" data-error="Wrong Email Type">E-Mail
-                            Address</label>
-
-                        @if ($errors->has('email'))
-                            <span class="help-block">
+                                    @if ($errors->has('email'))
+                                        <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
-                        @endif
-                    </div>
+                                    @endif
+                                </div>
+                            </div>
 
-                    <div class='input-field col s12'>
-                        <i class="prefix material-icons">lock_outline</i>
-                        <input id="password" type="password" class="validate" name="password"
-                               required>
-                        <label for="password" data-error="Invalid Password">Password</label>
+                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                <label for="password" class="col-md-4 control-label">Password</label>
 
-                        @if ($errors->has('password'))
-                            <span class="help-block">
+                                <div class="col-md-6">
+                                    <input id="password" autocomplete="off" type="password" class="form-control" name="password" required>
+
+                                    @if ($errors->has('password'))
+                                        <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
-                        @endif
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group" style="margin: 0">
+                                <div class="col-md-offset-5">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="remember"> Remember Me
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-offset-5">
+                                <button type="submit" class="btn btn-success btn-raised">
+                                    <i class="material-icons">send</i> Login Now
+                                </button>
+                            </div>
+                            <br>
+
+                            <div class="pull-left">
+                                <a class="btn btn-danger" href="{{ url('/password/reset') }}">
+                                    Forgot Password
+                                </a>
+                            </div>
+
+                            <div class="pull-right">
+                                <a class="btn btn-danger" href="{{ url('/register') }}">
+                                    Create Account
+                                </a>
+                            </div>
+
+                        </form>
                     </div>
-
-                    <div class='row'>
-                        <div class='input-field col s12 m12 l12 login-text'>
-                            <i class="prefix"></i>
-                            <input type="checkbox" name="remember" id="remember-me">
-                            <label for="remember-me">Remember Me</label>
-                        </div>
-                    </div>
-
-                    <div class="section"></div>
-
-                    <div class="center-align">
-                        <button type="submit" class="btn waves-effect">
-                            <i class="material-icons left">send</i> Sign In
-                        </button>
-                    </div>
-
-                    <div class="section"></div>
-
-                    <div class="left">
-                        <a class="waves-effect btn-flat pink-text" href="{{ url('/password/reset') }}">
-                            Forgot Password
-                        </a>
-                    </div>
-
-                    <div class="right">
-                        <a class="waves-effect btn-flat pink-text" href="{{ url('/register') }}">
-                            Create Account
-                        </a>
-                    </div>
-
-                </form>
-
+                </div>
             </div>
         </div>
     </div>

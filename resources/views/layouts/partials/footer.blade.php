@@ -1,19 +1,17 @@
-<footer class="page-footer grey">
-    <div class="footer-copyright">
-        <div class="container">
-            &copy; {{date('Y')}} {{config('app.name')}} - All rights reserved.
-            <a class="grey-text text-lighten-4 right" target="_blank" href="https://github.com/Dogfalo/materialize/blob/master/LICENSE">MIT
-                License
-            </a>
-        </div>
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted">&copy; {{date('Y')}} <a href="/">{{config('app.name')}}</a> - All rights reserved.</p>
     </div>
 </footer>
 
 <!-- Scripts -->
 {!! Packer::js([
 '/js/jquery.js',
-'/css/plugins/materialize/js/materialize.min.js',
+'/css/plugins/bootstrap/js/bootstrap.min.js',
+'/css/plugins/material-design/material.min.js',
+'/css/plugins/material-design/ripples.min.js',
 '/js/plugins/datatables/jquery.dataTables.min.js',
+'/js/plugins/datatables/datatables.bootstrap.js',
 '/js/plugins/datatables/fnFilterOnReturn.js',
 '/js/plugins/datatables/responsive/dataTables.responsive.min.js',
 '/js/plugins/isMobile.min.js',
