@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-info navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -11,7 +11,7 @@
             <a class="navbar-brand" href="/">{{config('app.name')}}</a>
         </div>
 
-        <div id="navbar" class="collapse navbar-collapse">
+        <div id="navbar" class="collapse navbar-collapse navbar-material-light-blue-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/"><b class="fa fa-home"></b> Home</a></li>
             </ul>
