@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">{{config('app.name')}}</a>
+            <a class="navbar-brand" href="/"><i class="fa fa-code"></i> {{config('app.name')}}</a>
         </div>
 
         <div id="navbar" class="collapse navbar-collapse navbar-material-light-blue-collapse">
