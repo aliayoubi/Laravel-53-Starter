@@ -1,6 +1,10 @@
 # Laravel-53-Starter
 Laravel 5.3 Starter project with Bootstrap CSS framework and useful packages needed for most apps.
 
+## Screenshot ##
+
+![Main Window](https://raw.github.com/sarfraznawaz2005/Laravel-53-Starter/master/screenshot.png)
+
 Packages Included:
 
 - [rinvex/repository](https://github.com/rinvex/repository "") Rinvex Repository is a simple, intuitive, and smart implementation of Active Repository Pattern
