@@ -1,4 +1,4 @@
-# Laravel-53-Starter
+# Laravel Starter
 Laravel 5.3 Starter project with Bootstrap CSS framework and useful packages needed for most apps.
 
 ## Screenshot ##
