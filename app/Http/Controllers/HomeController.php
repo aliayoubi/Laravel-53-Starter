@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 class HomeController extends Controller
 {
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
+    {
+        return view('pages.home.index', ['title' => 'Welcome']);
+    }
+
+    public function dashboard()
     {
         return view('pages.dashboard.index', ['title' => 'Dashboard']);
     }

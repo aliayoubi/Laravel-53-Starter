@@ -10,9 +10,8 @@ Route::get('applogs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')
 #===========================================================#
 ### PUBLIC ROUTES START ###
 
-Route::get('/', function () {
-    return view('pages.home.index');
-});
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('home', 'HomeController@index')->name('home');
 
 ### PUBLIC ROUTES END ###
 #===========================================================#
@@ -21,7 +20,7 @@ Route::get('/', function () {
 ### AUTHENTICATED ROUTES START ###
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 });
 
 ### AUTHENTICATED ROUTES END ###

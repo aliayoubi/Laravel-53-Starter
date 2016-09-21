@@ -28,6 +28,7 @@
     '/js/plugins/datatables/datatables.bootstrap.css',
     '/js/plugins/datatables/responsive/responsive.dataTables.min.css',
     '/js/plugins/sweetalert/dist/sweetalert.css',
+    '/css/loader.css',
     '/css/custom.css',
     ],
     '/storage/cache/css/')

@@ -22,20 +22,6 @@
 '/storage/cache/js/')
 !!}
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-    });
-
-    $(window).load(function () {
-        $('.loading-indicator-with-overlay').hide();
-    });
-</script>
-
 @stack('scripts')
 
 </body>
