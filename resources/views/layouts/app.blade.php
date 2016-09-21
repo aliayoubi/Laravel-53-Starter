@@ -25,5 +25,4 @@
     @yield('content')
 </div>
 
-
 @include('layouts/partials/footer')
