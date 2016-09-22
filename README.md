@@ -20,8 +20,6 @@ Laravel 5.3 Starter project with Bootstrap CSS framework and useful packages nee
 - [laracasts/flash](https://github.com/laracasts/flash "") Easy flash notifications
 - [sarfraznawaz2005/visitlog](https://github.com/sarfraznawaz2005/visitlog "") Laravel package to log visitor information into database.
 - [davidhemphill/presenter](https://github.com/davidhemphill/presenter "") Decorate models for presentation in views, responses, pdfs, csv files, or anywhere.
-- [Propaganistas/Laravel-FakeId](https://github.com/Propaganistas/Laravel-FakeId "") Automatic route ID obfuscation in routes for Laravel 5
-- [kristijanhusak/laravel-form-builder](https://github.com/kristijanhusak/laravel-form-builder "") Laravel Form builder for version 5!
 - [recca0120/laravel-tracy](https://github.com/recca0120/laravel-tracy "") A Laravel Package to integrate Nette Tracy Debugger
 - [themsaid/laravel-mail-preview](https://github.com/themsaid/laravel-mail-preview "") Mail driver that saves sent mail to disk.
 - [laracasts/PHP-Vars-To-Js-Transformer](https://github.com/laracasts/PHP-Vars-To-Js-Transformer "") Transform PHP types to JavaScript

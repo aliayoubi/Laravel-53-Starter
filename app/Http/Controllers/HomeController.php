@@ -8,9 +8,4 @@ class HomeController extends Controller
     {
         return view('pages.home.index', ['title' => 'Welcome']);
     }
-
-    public function dashboard()
-    {
-        return view('pages.dashboard.index', ['title' => 'Dashboard']);
-    }
 }

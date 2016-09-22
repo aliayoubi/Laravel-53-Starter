@@ -1,8 +1,5 @@
 /**
- * Created by Sarfraz on 9/18/2016.
- *
  * Custom CSS for the app.
- *
  */
 
 /* START: Sticky footer styles */
@@ -38,6 +35,10 @@ body > .container {
 .navigations {
     border-bottom: 1px solid #ddd;
     margin-bottom: 25px;
+}
+
+.padded {
+    padding: 15px;
 }
 
 .navbar-brand {

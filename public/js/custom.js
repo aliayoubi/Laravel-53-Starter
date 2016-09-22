@@ -6,10 +6,7 @@
  */
 
 $(function () {
-
-    // hide loader
-    $('.loading-indicator-with-overlay').hide();
-
+    
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

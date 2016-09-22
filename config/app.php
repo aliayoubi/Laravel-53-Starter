@@ -168,8 +168,6 @@ return [
          */
 
         Rinvex\Repository\Providers\RepositoryServiceProvider::class,
-        AdamWathan\Form\FormServiceProvider::class,
-        Kris\LaravelFormBuilder\FormBuilderServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
@@ -180,11 +178,11 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
         Sarfraznawaz2005\VisitLog\VisitLogServiceProvider::class,
         Hemp\Presenter\PresenterServiceProvider::class,
-        Propaganistas\LaravelFakeId\FakeIdServiceProvider::class,
         Recca0120\LaravelTracy\ServiceProvider::class,
         Themsaid\MailPreview\MailPreviewServiceProvider::class,
         Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
         Mews\Purifier\PurifierServiceProvider::class,
+        AdamWathan\BootForms\BootFormsServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -243,8 +241,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         ### custom ones ###
-        'Form' => AdamWathan\Form\Facades\Form::class,
-        'FormBuilder' => Kris\LaravelFormBuilder\Facades\FormBuilder::class,
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
         'Datatables' => yajra\Datatables\Datatables::class,
         'Active' => Watson\Active\Facades\Active::class,
@@ -254,6 +250,7 @@ return [
         'Flash' => Laracasts\Flash\Flash::class,
         'VisitLog' => Sarfraznawaz2005\VisitLog\Facades\VisitLog::class,
         'Purifier' => Mews\Purifier\Facades\Purifier::class,
+        'BootForm' => AdamWathan\BootForms\Facades\BootForm::class,
 
     ],
 

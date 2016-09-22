@@ -12,8 +12,13 @@
             Laravel 5.3 Starter project with Bootstrap CSS framework and useful packages needed for most apps
         </p>
         <p>
-            <a class="btn btn-lg btn-success btn-raised" href="{{ url('/register') }}" role="button"><i
-                        class="material-icons">send</i> Get Started!</a>
+            @if (Auth::guest())
+                <a class="btn btn-lg btn-success btn-raised" href="{{ url('/register') }}" role="button"><i
+                            class="material-icons">send</i> Get Started!</a>
+            @else
+                <a class="btn btn-lg btn-success btn-raised" href="{{route('dashboard')}}" role="button"><i
+                            class="material-icons">send</i> Dashboard</a>
+            @endif
         </p>
     </div>
 

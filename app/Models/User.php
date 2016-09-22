@@ -6,14 +6,17 @@ use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Model implements AuthenticatableContract, CanResetPasswordContract
+class User extends BaseModel implements AuthenticatableContract, CanResetPasswordContract
 {
     use Authenticatable;
     use CanResetPassword;
     use Notifiable;
+
+    // allows soft deletes in cascade
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -35,4 +38,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         'password',
         'remember_token',
     ];
+
+    /**
+     * The model relationships.
+     *
+     * @var array
+     */
+    public static $relationsData = array(
+        'tasks' => array(self::HAS_MANY, Task::class),
+    );
 }
