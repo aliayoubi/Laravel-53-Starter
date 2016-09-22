@@ -1,9 +1,9 @@
 <?php
 
-# auth routes
+### auth routes ###
 Auth::routes();
 
-# for logs
+### for logs ###
 Route::get('applogs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
 #===========================================================#
@@ -11,7 +11,6 @@ Route::get('applogs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')
 //
 ### ROUTE MODEL BINDING END ###
 #===========================================================#
-
 
 #===========================================================#
 ### PUBLIC ROUTES START ###
