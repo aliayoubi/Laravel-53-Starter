@@ -16,13 +16,17 @@
         </div>
 
         <div id="new_task" class="tab-pane fade">
-            {!! BootForm::open()->post()->action(route('task.store') ) !!}
-            {!! BootForm::textarea('Task Description', 'description')->rows(1)->required() !!}
-            {!! BootForm::submit('<i class="material-icons">send</i> Add Task')
-            ->addClass('btn-raised')
-            ->addClass('btn-success')
-            !!}
-            {!! BootForm::close() !!}
+            <form method="POST" action="{{route('task.store')}}">
+                {{ csrf_field() }}
+
+                <div class="form-group"><label class="control-label" for="description">Task Description</label>
+                    <textarea name="description" rows="1" cols="50" id="description" class="form-control"
+                              required="required"></textarea>
+                </div>
+                <button type="submit" class="btn btn-default btn-raised btn-success">
+                    <i class="material-icons">send</i> Add Task
+                </button>
+            </form>
         </div>
     </div>
 @endsection

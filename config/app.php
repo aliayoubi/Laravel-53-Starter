@@ -182,7 +182,6 @@ return [
         Themsaid\MailPreview\MailPreviewServiceProvider::class,
         Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
         Mews\Purifier\PurifierServiceProvider::class,
-        AdamWathan\BootForms\BootFormsServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -250,7 +249,6 @@ return [
         'Flash' => Laracasts\Flash\Flash::class,
         'VisitLog' => Sarfraznawaz2005\VisitLog\Facades\VisitLog::class,
         'Purifier' => Mews\Purifier\Facades\Purifier::class,
-        'BootForm' => AdamWathan\BootForms\Facades\BootForm::class,
 
     ],
 
