@@ -2,26 +2,28 @@
 <body>
 @include('layouts/partials/nav')
 
-<div class="mainbody container">
-    <div class="navigations">
-        <div class="pull-left">
-            <div class="page-header text-center">
-                <h1 class="alert alert-info"><i class="fa fa-th-large"></i> @yield('title')</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading page-header">
+                    <h1><i class="fa fa-th-large"></i> @yield('title')</h1>
+                </div>
+
+                @if (Auth::check())
+                    <div>{!! Breadcrumbs::render() !!}</div>
+                @endif
+
+                <div class="panel-body ">
+                    @include('flash::message')
+                    @include('shared.errors')
+                    @include('shared.loader')
+
+                    @yield('content')
+                </div>
             </div>
         </div>
-
-        @if (Auth::check())
-            <div class="pull-right">{!! Breadcrumbs::render() !!}</div>
-        @endif
-
-        <div class="clearfix"></div>
     </div>
-
-    @include('flash::message')
-    @include('shared.errors')
-    @include('shared.loader')
-
-    @yield('content')
 </div>
 
 @include('layouts/partials/footer')

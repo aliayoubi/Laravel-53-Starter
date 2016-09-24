@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
+                <div class="panel panel-info">
                     <div class="panel-heading"><i class="glyphicon glyphicon-lock"></i> Login Details</div>
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
@@ -43,8 +43,9 @@
                                 </div>
                             </div>
 
+                            <div class="col-md-4"></div>
                             <div class="form-group">
-                                <div class="col-md-offset-5">
+                                <div class="col-md-6">
                                     <div class="checkbox3 checkbox-primary checkbox-inline checkbox-check checkbox-round">
                                         <input type="checkbox" name="remember" id="remember">
                                         <label for="remember">Remember Me</label>
@@ -52,7 +53,8 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-offset-5">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-6">
                                 <button type="submit" class="btn btn-success btn-raised">
                                     <i class="fa fa-paper-plane"></i> Login Now
                                 </button>

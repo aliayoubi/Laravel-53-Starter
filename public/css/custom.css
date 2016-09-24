@@ -29,7 +29,7 @@ a {
 /* END: Sticky footer styles */
 
 body > .container {
-    padding: 60px 15px 0;
+    padding: 80px 15px 0;
 }
 
 .page-header {
@@ -56,9 +56,11 @@ body > .container {
 .page-header h1 {
     margin: 0;
     font-size: 20px;
-    padding: 10px;
-    text-align: center;
     font-weight: bold;
+}
+
+.panel-heading.page-header {
+    margin: 0;
 }
 
 .panel-heading {
