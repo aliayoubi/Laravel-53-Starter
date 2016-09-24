@@ -74,9 +74,6 @@ class Controller extends BaseController
      */
     public function createAndRedirect($repository, $data)
     {
-        // clean data from XSS attacks
-        safe($data);
-
         list($status, $instance) = $repository->create($data);
 
         if (!$status) {
@@ -98,9 +95,6 @@ class Controller extends BaseController
      */
     public function updateAndRedirect($repository, $data)
     {
-        // clean data from XSS attacks
-        safe($data);
-        
         list($status, $instance) = $repository->update($repository->id, $data);
 
         if (!$status) {
