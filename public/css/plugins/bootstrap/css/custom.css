@@ -355,8 +355,4 @@ tbody:hover > tr:hover td {
     background: #fff7df;
 }
 
-td:last-child, th:last-child, td.center, th.center {
-    text-align: center;
-}
-
 /* table style end */
