@@ -7,12 +7,6 @@ Auth::routes();
 Route::get('applogs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
 #===========================================================#
-### ROUTE MODEL BINDING START ###
-//
-### ROUTE MODEL BINDING END ###
-#===========================================================#
-
-#===========================================================#
 ### PUBLIC ROUTES START ###
 
 Route::get('/', 'HomeController@index')->name('home');

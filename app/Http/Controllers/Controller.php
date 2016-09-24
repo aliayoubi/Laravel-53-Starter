@@ -19,14 +19,13 @@ class Controller extends BaseController
     const DELETE_MESSAGE = 'Deleted Successfully!';
     const UPDATE_MESSAGE = 'Updated Successfully!';
 
-    // for common stuff
     public function __construct()
     {
-        //
+        // any common stuff
     }
 
     /**
-     * Used mostly in show/update/delete actions of controllers to check whether logged user owns model record.
+     * Check whether logged user owns model record.
      *
      * @param $model
      * @param string $userField
