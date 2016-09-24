@@ -64,7 +64,6 @@ class TasksDataTable extends DataTable
     {
         return [
             'description',
-            'completed',
             'created_at',
         ];
     }
