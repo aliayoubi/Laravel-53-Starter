@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>503 Error</title>
+    <title>404</title>
 
     <style>
         html, body {
@@ -52,9 +52,9 @@
 <body>
 <div class="container">
     <div class="content">
-        <div class="title">500</div>
-        <p class="text">Don't worry, there is a little turbulence!</p>
-        <p class="text">We're trying to fix it, please come back later.</p>
+        <div class="title">404</div>
+        <p class="text">Sorry, but this page doesn't exists!</p>
+        <p>{!!link_to('/', '&larr; Back To Home Page') !!}</p>
         <br><br>
         <small>&copy; {{date('Y')}} {{config('app.name')}}</small>
     </div>

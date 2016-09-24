@@ -12,11 +12,7 @@
 
     <div class="tab-content padded">
         <div id="tasks" class="tab-pane fade in active">
-            <ul>
-                @foreach($repository as $row)
-                    <li>{{$row->description}}</li>
-                @endforeach
-            </ul>
+            {!! $dataTable->table(['class' => 'table table-striped table-bordered table-hover dt-responsive nowrap']) !!}
         </div>
 
         <div id="new_task" class="tab-pane fade">
@@ -29,9 +25,13 @@
                               required="required"></textarea>
                 </div>
                 <button type="submit" class="btn btn-default btn-raised btn-success">
-                    <i class="fa fa-save"></i> Add Task
+                    <i class="fa fa-save"></i> Update
                 </button>
             </form>
         </div>
     </div>
+
+    @include('popups.delete_confirm')
 @endsection
+
+@include('shared.datatables_export')

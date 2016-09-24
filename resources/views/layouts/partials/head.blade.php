@@ -18,10 +18,14 @@
 
     {!! Packer::css([
     '/css/plugins/bootstrap/css/bootstrap.min.css',
+    '/css/plugins/bootstrap/css/bootstrap-theme.min.css',
+    '/css/plugins/bootstrap/css/custom.css',
     '/css/plugins/font-awesome-4/css/font-awesome.min.css',
+    '/css/plugins/checkbox3.min.css',
     '/js/plugins/datatables/datatables.bootstrap.css',
     '/js/plugins/datatables/responsive/responsive.dataTables.min.css',
     '/js/plugins/sweetalert/dist/sweetalert.css',
+    '/js/plugins/select2/select2.min.css',
     '/css/loader.css',
     '/css/custom.css',
     ],

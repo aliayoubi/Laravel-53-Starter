@@ -2,39 +2,77 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\TasksDataTable;
+use App\Models\Task;
 use App\Repositories\TaskRepository;
 use Illuminate\Http\Request;
 
 class TasksController extends Controller
 {
+    // our repository to be used in entire controller
     protected $repository = null;
 
-    // assign our model repository in controller
+    // assign our model repository for the controller
     public function __construct(TaskRepository $repository)
     {
         $this->repository = $repository;
     }
 
-    // show listing/page
-    public function index()
+    // show listing
+    public function index(TasksDataTable $dataTable)
     {
         $title = 'Dashboard';
 
-        // get logged-in user's date
-        $repository = $this->userData($this->repository);
-
-        return view('pages.dashboard.index', compact('title', 'repository'));
+        return $dataTable->render('pages.dashboard.index', compact('title'));
     }
 
     // create
     public function store(Request $request)
     {
-        $data = $request->all();
-        
-        // add "user_id" also to $data
-        $this->addLoggedUser($data);
-        
+        // add "user_id" before saving
+        $request->request->add(['user_id' => $request->user()->id]);
+
         // create and redirect by showing flash message
-        return $this->createAndRedirect($this->repository, $data);
+        return $this->createRecord($this->repository);
+    }
+
+    // update task "complete" status
+    public function complete(Task $task)
+    {
+        // update only if logged user is owner of this record
+        if ($this->isOwner($task)) {
+            $task->completed = $task->completed == 1 ? 0 : 1;
+
+            return $this->updateRecord($this->repository, $task);
+        }
+    }
+
+    // edit page
+    public function edit(Task $task)
+    {
+        // show only if logged user is owner of this record
+        if ($this->isOwner($task)) {
+            $title = 'Edit Task';
+
+            return view('pages.dashboard.edit', compact('title', 'task'));
+        }
+    }
+
+    // update
+    public function update(Task $task)
+    {
+        // update only if logged user is owner of this record
+        if ($this->isOwner($task)) {
+            return $this->updateRecord($this->repository, $task);
+        }
+    }
+
+    // delete
+    public function destroy(Task $task)
+    {
+        // delete only if logged user is owner of this record
+        if ($this->isOwner($task)) {
+            return $this->deleteRecord($this->repository, $task);
+        }
     }
 }

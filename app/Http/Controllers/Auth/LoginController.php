@@ -6,6 +6,7 @@ use Alert;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Sarfraznawaz2005\VisitLog\Facades\VisitLog;
 
 class LoginController extends Controller
 {
@@ -53,6 +54,9 @@ class LoginController extends Controller
         if ($this->guard()->attempt($credentials, $request->has('remember'))) {
             // success
             Alert::message('Welcome Back!');
+            
+            // save visit log
+            VisitLog::save();
 
             return $this->sendLoginResponse($request);
         }

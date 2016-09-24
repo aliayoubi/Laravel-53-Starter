@@ -13,6 +13,10 @@ body {
     margin-bottom: 60px;
 }
 
+a {
+    outline: none;
+}
+
 .footer {
     position: absolute;
     bottom: 0;
@@ -59,6 +63,10 @@ body > .container {
 
 .panel-heading {
     font-weight: bold;
+}
+
+table a {
+    text-decoration: none !important;
 }
 
 .footer {

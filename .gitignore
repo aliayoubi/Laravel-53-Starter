@@ -17,3 +17,4 @@ vendor/*/tests
 /PUSH.SH
 /todo.txt
 /bootstrap/cache/services.php
+/storage/clockwork/

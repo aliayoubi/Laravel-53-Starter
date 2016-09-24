@@ -4,15 +4,16 @@
         <div class="modal-content">
 
             <div class="modal-header modal-header-danger">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                            class="sr-only">Close</span></button>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span></button>
                 <h4 class="modal-title">
                     <b class="glyphicon-4x glyphicon glyphicon-trash"></b>
                     Confirm Delete
                 </h4>
             </div>
 
-            <div class="modal-body" style="margin-bottom: -20px;"></div>
+            <div class="modal-body"></div>
 
             <div class="modal-footer">
                 <button class="btn btn-default col-sm-2 pull-right" data-dismiss="modal">
@@ -23,7 +24,7 @@
                     {{csrf_field()}}
                     {{method_field('DELETE')}}
 
-                    <button style='margin-left:10px;' type="button"
+                    <button style="margin-right: 10px;" type="button"
                             class="btn confirm-delete-red-button btn-danger col-sm-2 pull-right"
                             id="frm_submit">Delete
                     </button>

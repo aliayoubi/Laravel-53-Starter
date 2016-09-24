@@ -10,3 +10,9 @@ Breadcrumbs::register('dashboard', function ($breadcrumbs) {
     $breadcrumbs->parent('home');
     $breadcrumbs->push('Dashboard', route('dashboard'));
 });
+
+// Edit Task
+Breadcrumbs::register('task.edit', function ($breadcrumbs) {
+    $breadcrumbs->parent('dashboard');
+    $breadcrumbs->push('Edit Task');
+});

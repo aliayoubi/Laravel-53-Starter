@@ -49,7 +49,7 @@ class Handler extends ExceptionHandler
 
             switch ($exception->getStatusCode()) {
                 case 404:
-                    return \Response::view('errors.error404', array(), 404);
+                    return \Response::view('errors.404', array(), 404);
                     break;
             }
 

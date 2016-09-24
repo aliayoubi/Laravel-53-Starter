@@ -32,7 +32,8 @@
                                 <label for="password" class="col-md-4 control-label">Password</label>
 
                                 <div class="col-md-6">
-                                    <input id="password" autocomplete="off" type="password" class="form-control" name="password" required>
+                                    <input id="password" autocomplete="off" type="password" class="form-control"
+                                           name="password" required>
 
                                     @if ($errors->has('password'))
                                         <span class="help-block">
@@ -44,10 +45,9 @@
 
                             <div class="form-group">
                                 <div class="col-md-offset-5">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="remember"> Remember Me
-                                        </label>
+                                    <div class="checkbox3 checkbox-primary checkbox-inline checkbox-check checkbox-round">
+                                        <input type="checkbox" name="remember" id="remember">
+                                        <label for="remember">Remember Me</label>
                                     </div>
                                 </div>
                             </div>

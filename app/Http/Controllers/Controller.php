@@ -26,102 +26,94 @@ class Controller extends BaseController
     }
 
     /**
-     * Adds "user_id" value of logged user to provided array
+     * Used mostly in show/update/delete actions of controllers to check whether logged user owns model record.
      *
-     * @param $data
-     * @return mixed
-     */
-    public function addLoggedUser(&$data)
-    {
-        $data['user_id'] = auth()->user()->id;
-    }
-
-    /**
-     * Used mostly in edit actions of controllers to check whether logged user owns model record.
-     *
-     * @param $repository
+     * @param $model
      * @param string $userField
      * @return bool
      */
-    public function isOwner($repository, $userField = 'user_id')
+    public function isOwner($model, $userField = 'user_id')
     {
-        return $repository->$userField == auth()->user()->id;
-    }
-
-    /**
-     * Gets user's data from specified repository
-     *
-     * @param $repository
-     * @param int $userId
-     * @param string $userField
-     * @return bool
-     */
-    public function userData($repository, $userId = 0, $userField = 'user_id')
-    {
-        if ($userId) {
-            return $repository->findAll()->where($userField, $userId);
+        if ($model->$userField == auth()->user()->id) {
+            return true;
         }
 
-        return $repository->findAll()->where($userField, auth()->user()->id);
+        abort(404);
     }
 
     /**
      * create and redirects to last page
      *
      * @param $repository
-     * @param $data
+     * @param array $data
+     * @param bool $redirectBack
      * @return mixed
      */
-    public function createAndRedirect($repository, $data)
+    public function createRecord($repository, $data = [], $redirectBack = true)
     {
-        list($status, $instance) = $repository->create($data);
-
-        if (!$status) {
-            return Redirect::back()->withErrors($instance->errors());
+        if ($data) {
+            list($status, $instance) = $repository->create($data);
+        } else {
+            list($status, $instance) = $repository->create();
         }
 
-        //Flash::success(self::ADD_MESSAGE);
-        Alert::success(self::ADD_MESSAGE, 'Success')->autoclose(3000);
-
-        return Redirect::back();
+        return $this->response($redirectBack, $status, $instance, self::ADD_MESSAGE);
     }
 
     /**
      * update and redirects to last page
      *
      * @param $repository
-     * @param $data
+     * @param $model
+     * @param bool $redirectBack
      * @return mixed
      */
-    public function updateAndRedirect($repository, $data)
+    public function updateRecord($repository, $model, $redirectBack = true)
     {
-        list($status, $instance) = $repository->update($repository->id, $data);
+        list($status, $instance) = $repository->update($model->id, $model->toArray());
 
-        if (!$status) {
-            return Redirect::back()->withErrors($instance->errors());
-        }
-
-        Alert::success(self::UPDATE_MESSAGE, 'Success')->autoclose(3000);
-
-        return Redirect::back();
+        return $this->response($redirectBack, $status, $instance, self::UPDATE_MESSAGE);
     }
 
     /**
-     * deletes and redirects to last page
+     * deletes a model record
      *
      * @param $repository
+     * @param $model
+     * @param bool $redirectBack
      * @return mixed
      */
-    public function deleteAndRedirect($repository)
+    public function deleteRecord($repository, $model, $redirectBack = true)
     {
-        list($status, $instance) = $repository->delete($repository->id);
+        list($status, $instance) = $repository->delete($model->id);
 
+        return $this->response($redirectBack, $status, $instance, self::DELETE_MESSAGE);
+    }
+
+    /**
+     * @param $redirectBack
+     * @param $status
+     * @param $instance
+     * @param $message
+     * @return $this|\Illuminate\Http\RedirectResponse
+     */
+    protected function response($redirectBack, $status, $instance, $message)
+    {
         if (!$status) {
-            return Redirect::back()->withErrors($instance->errors());
+            if ($redirectBack) {
+                return Redirect::back()->withErrors($instance->errors());
+            }
+
+            return $instance->errors();
         }
 
-        Alert::success(self::DELETE_MESSAGE, 'Success')->autoclose(3000);
+        Flash::success($message);
+        Alert::success($message, 'Success!')->autoclose(5000);
 
-        return Redirect::back();
+        if ($redirectBack) {
+            return Redirect::back();
+        }
+
+        return $status;
     }
 }

@@ -15,6 +15,7 @@
 '/js/plugins/isMobile.min.js',
 '/js/plugins/jquery.pulsate.min.js',
 '/js/plugins/sweetalert/dist/sweetalert.min.js',
+'/js/plugins/select2/select2.full.min.js',
 '/js/custom.js',
 ],
 '/storage/cache/js/')

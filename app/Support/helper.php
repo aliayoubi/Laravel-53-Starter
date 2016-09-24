@@ -100,10 +100,11 @@ function out($message, $log = true)
 
 /**
  * Shows general info message via SweetAlert
- * 
+ *
  * @param $message
  */
 function showAlert($message)
 {
     Alert::message($message)->persistent('Close');
 }
+
