@@ -25,7 +25,6 @@
     "themsaid/laravel-mail-preview": "^1.2",
     "laracasts/utilities": "^2.1",
     "mews/purifier": "^2.0",
-    "iatstuti/laravel-owns-models": "^1.0",
     "iatstuti/laravel-cascade-soft-deletes": "^1.1",
     "rinvex/repository": "^2.0",
     "malhal/laravel-createdby": "^1.0"

@@ -8,7 +8,6 @@ Laravel 5.3 Starter project with Bootstrap CSS framework and useful packages nee
 ## Packages Included ##
 
 - [rinvex/repository](https://github.com/rinvex/repository "") Rinvex Repository is a simple, intuitive, and smart implementation of Active Repository Pattern
-- [adamwathan/form](https://github.com/adamwathan/form "") Super basic form HTML builder
 - [rap2hpoutre/laravel-log-viewer](https://github.com/rap2hpoutre/laravel-log-viewer "") Laravel 5 log viewer
 - [yajra/laravel-datatables](https://github.com/yajra/laravel-datatables "") jQuery DataTables API for Laravel 4|5
 - [davejamesmiller/laravel-breadcrumbs](https://github.com/davejamesmiller/laravel-breadcrumbs "") Laravel Breadcrumbs - A simple Laravel-style way to create breadcrumbs.
@@ -25,7 +24,6 @@ Laravel 5.3 Starter project with Bootstrap CSS framework and useful packages nee
 - [laracasts/PHP-Vars-To-Js-Transformer](https://github.com/laracasts/PHP-Vars-To-Js-Transformer "") Transform PHP types to JavaScript
 - [mewebstudio/Purifier](https://github.com/mewebstudio/Purifier "") HTMLPurifier for Laravel 5
 - [malhal/Laravel-CreatedBy](https://github.com/malhal/Laravel-CreatedBy "") A trait that adds createdBy and updatedBy user relations to your models.
-- [michaeldyrynda/laravel-owns-models](https://github.com/michaeldyrynda/laravel-owns-models "") Trait that allows to determine whether using model owns some other model.
 - [michaeldyrynda/laravel-cascade-soft-deletes](https://github.com/michaeldyrynda/laravel-cascade-soft-deletes "") Cascading deletes for Eloquent models that implement soft deletes
 
 ## Installation ##

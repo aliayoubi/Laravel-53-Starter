@@ -40,6 +40,16 @@ class User extends BaseModel implements AuthenticatableContract, CanResetPasswor
     ];
 
     /**
+     * The validation rules.
+     *-
+     * @var array
+     */
+    public static $rules = [
+        'name' => 'required|max:50',
+        'email' => 'required|email',
+    ];
+
+    /**
      * The model relationships.
      *
      * @var array

@@ -25,6 +25,17 @@ class Controller extends BaseController
     }
 
     /**
+     * Adds "user_id" value of logged user to provided array
+     *
+     * @param $data
+     * @return mixed
+     */
+    public function addLoggedUser(&$data)
+    {
+        $data['user_id'] = auth()->user()->id;
+    }
+
+    /**
      * create and redirects to last page
      *
      * @param $repository

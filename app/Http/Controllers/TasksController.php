@@ -9,11 +9,13 @@ class TasksController extends Controller
 {
     protected $repository = null;
 
+    // assign our model repository in controller
     public function __construct(TaskRepository $repository)
     {
         $this->repository = $repository;
     }
 
+    // show listing/page
     public function index()
     {
         $title = 'Dashboard';
@@ -21,11 +23,12 @@ class TasksController extends Controller
         return view('pages.dashboard.index', compact('title'));
     }
 
+    // create
     public function store(Request $request)
     {
         $data = $request->all();
-        $data['user_id'] = auth()->user()->id;
-        
+        $this->addLoggedUser($data);
+
         return $this->createAndRedirect($this->repository, $data);
     }
 }
