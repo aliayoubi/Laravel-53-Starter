@@ -2,7 +2,6 @@
 
 namespace App\DataTables;
 
-use App\Models\Task;
 use Yajra\Datatables\Services\DataTable;
 
 class TasksDataTable extends DataTable
@@ -36,7 +35,7 @@ class TasksDataTable extends DataTable
      */
     public function query()
     {
-        $query = Task::where('user_id', auth()->user()->id)->latest();
+        $query = auth()->user()->tasks()->latest();
 
         return $this->applyScopes($query);
     }
@@ -104,9 +103,9 @@ class TasksDataTable extends DataTable
         $type = $status == 0 ? 'default' : 'success';
 
         $html = <<< HTML
-    <a data-placement="top" data-tooltip data-original-title="$title" title="$title" class="edit_btn" href="$link">
-        <b class="btn btn-$type btn-sm glyphicon glyphicon-ok"></b>
-    </a>
+        <a data-placement="top" data-tooltip data-original-title="$title" title="$title" class="edit_btn" href="$link">
+            <b class="btn btn-$type btn-sm glyphicon glyphicon-ok"></b>
+        </a>
 HTML;
 
         return $html;

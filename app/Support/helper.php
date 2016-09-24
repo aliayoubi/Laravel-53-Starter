@@ -127,13 +127,12 @@ function listingDeleteButton($link, $title = 'this', $showTip = true)
     $tooltipClass = $showTip ? 'data-tooltip' : '';
 
     $html = <<< HTML
-
-        <a data-placement="top" $tooltipClass data-original-title="Delete" class="delete_btn confirm-delete"
-        data-label="$title"
-        rel="$link"
-        href="javascript:void(0);">
-            <b class="btn btn-danger btn-sm glyphicon glyphicon-trash"></b>
-        </a>
+    <a data-placement="top" $tooltipClass data-original-title="Delete" class="delete_btn confirm-delete"
+    data-label="$title"
+    rel="$link"
+    href="javascript:void(0);">
+        <b class="btn btn-danger btn-sm glyphicon glyphicon-trash"></b>
+    </a>
 HTML;
 
     return $html;

@@ -70,8 +70,8 @@ $(function () {
     });
 
     // activate last active tab
-    if (typeof __selected_tab__ !== 'undefined') {
-        var activeTab = $('[href=' + __selected_tab__ + ']');
+    if (typeof selected_tab !== 'undefined') {
+        var activeTab = $('[href=' + selected_tab + ']');
         activeTab && activeTab.tab('show');
     }
 

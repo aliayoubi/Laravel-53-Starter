@@ -9,8 +9,8 @@ Route::get('applogs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')
 #===========================================================#
 ### PUBLIC ROUTES START ###
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController')->name('home');
+Route::get('home', 'HomeController')->name('home');
 
 ### PUBLIC ROUTES END ###
 #===========================================================#
@@ -20,11 +20,11 @@ Route::get('home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('dashboard', 'TasksController@index')->name('dashboard');
-    Route::post('task/store', 'TasksController@store')->name('task.store');
-    Route::get('task/edit/{task}', 'TasksController@edit')->name('task.edit');
-    Route::post('task/update/{task}', 'TasksController@update')->name('task.update');
-    Route::get('task/complete/{task}', 'TasksController@complete')->name('task.complete');
-    Route::delete('task/destroy/{task}', 'TasksController@destroy')->name('task.destroy');
+    Route::post('tasks/store', 'TasksController@store')->name('task.store');
+    Route::get('tasks/{task}/edit', 'TasksController@edit')->name('task.edit');
+    Route::patch('tasks/{task}', 'TasksController@update')->name('task.update');
+    Route::delete('tasks/{task}', 'TasksController@destroy')->name('task.destroy');
+    Route::get('tasks/{task}/complete', 'TasksController@complete')->name('task.complete');
 });
 
 ### AUTHENTICATED ROUTES END ###

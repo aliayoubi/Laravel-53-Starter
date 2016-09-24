@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Models\User;
-use App\Repositories\UserRepository;
-use Validator;
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use App\Notifications\UserWasRegistered;
+use App\Repositories\UserRepository;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Validator;
 
 class RegisterController extends Controller
 {
@@ -69,6 +70,11 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+
+        // send ^notification^ email if user was created successfully
+        if ($status) {
+            $instance->notify(new UserWasRegistered($instance));
+        }
 
         return $instance;
     }
