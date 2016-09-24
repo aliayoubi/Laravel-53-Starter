@@ -14,9 +14,9 @@ return [
     'strictMode' => true,
     'editorMapping' => [],
     'panels' => [
-        'routing' => true,
+        'routing' => false,
         'database' => true,
-        'view' => true,
+        'view' => false,
         'event' => false,
         'session' => true,
         'request' => true,

@@ -97,3 +97,13 @@ function out($message, $log = true)
         Log::info($message);
     }
 }
+
+/**
+ * Shows general info message via SweetAlert
+ * 
+ * @param $message
+ */
+function showAlert($message)
+{
+    Alert::message($message)->persistent('Close');
+}

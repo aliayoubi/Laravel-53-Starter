@@ -8,8 +8,6 @@
 {!! Packer::js([
 '/js/jquery.js',
 '/css/plugins/bootstrap/js/bootstrap.min.js',
-'/css/plugins/material-design/material.min.js',
-'/css/plugins/material-design/ripples.min.js',
 '/js/plugins/datatables/jquery.dataTables.min.js',
 '/js/plugins/datatables/datatables.bootstrap.js',
 '/js/plugins/datatables/fnFilterOnReturn.js',
@@ -23,6 +21,8 @@
 !!}
 
 @stack('scripts')
+
+@include('sweet::alert')
 
 </body>
 </html>

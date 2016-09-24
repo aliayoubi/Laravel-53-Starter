@@ -22,7 +22,6 @@ Laravel 5.3 Starter project with Bootstrap CSS framework and useful packages nee
 - [recca0120/laravel-tracy](https://github.com/recca0120/laravel-tracy "") A Laravel Package to integrate Nette Tracy Debugger
 - [themsaid/laravel-mail-preview](https://github.com/themsaid/laravel-mail-preview "") Mail driver that saves sent mail to disk.
 - [laracasts/PHP-Vars-To-Js-Transformer](https://github.com/laracasts/PHP-Vars-To-Js-Transformer "") Transform PHP types to JavaScript
-- [mewebstudio/Purifier](https://github.com/mewebstudio/Purifier "") HTMLPurifier for Laravel 5
 - [malhal/Laravel-CreatedBy](https://github.com/malhal/Laravel-CreatedBy "") A trait that adds createdBy and updatedBy user relations to your models.
 - [michaeldyrynda/laravel-cascade-soft-deletes](https://github.com/michaeldyrynda/laravel-cascade-soft-deletes "") Cascading deletes for Eloquent models that implement soft deletes
 

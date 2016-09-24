@@ -6,7 +6,7 @@
     <div class="navigations">
         <div class="pull-left">
             <div class="page-header text-center">
-                <h1 class="badge"><i class="fa fa-th-large"></i> @yield('title')</h1>
+                <h1 class="alert alert-info"><i class="fa fa-th-large"></i> @yield('title')</h1>
             </div>
         </div>
 
@@ -19,7 +19,6 @@
 
     @include('flash::message')
     @include('shared.errors')
-    @include('sweet::alert')
     @include('shared.loader')
 
     @yield('content')

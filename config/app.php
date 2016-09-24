@@ -181,7 +181,6 @@ return [
         Recca0120\LaravelTracy\ServiceProvider::class,
         Themsaid\MailPreview\MailPreviewServiceProvider::class,
         Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
-        Mews\Purifier\PurifierServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -248,7 +247,6 @@ return [
         'Alert' => UxWeb\SweetAlert\SweetAlert::class,
         'Flash' => Laracasts\Flash\Flash::class,
         'VisitLog' => Sarfraznawaz2005\VisitLog\Facades\VisitLog::class,
-        'Purifier' => Mews\Purifier\Facades\Purifier::class,
 
     ],
 

@@ -12,19 +12,24 @@
 
     <div class="tab-content padded">
         <div id="tasks" class="tab-pane fade in active">
-            My Tasks
+            <ul>
+                @foreach($repository as $row)
+                    <li>{{$row->description}}</li>
+                @endforeach
+            </ul>
         </div>
 
         <div id="new_task" class="tab-pane fade">
             <form method="POST" action="{{route('task.store')}}">
                 {{ csrf_field() }}
 
-                <div class="form-group"><label class="control-label" for="description">Task Description</label>
+                <div class="form-group">
+                    <label class="control-label" for="description">Task Description</label>
                     <textarea name="description" rows="1" cols="50" id="description" class="form-control"
                               required="required"></textarea>
                 </div>
                 <button type="submit" class="btn btn-default btn-raised btn-success">
-                    <i class="material-icons">send</i> Add Task
+                    <i class="fa fa-save"></i> Add Task
                 </button>
             </form>
         </div>

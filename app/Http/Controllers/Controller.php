@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Alert;
 use Flash;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -36,6 +37,35 @@ class Controller extends BaseController
     }
 
     /**
+     * Used mostly in edit actions of controllers to check whether logged user owns model record.
+     *
+     * @param $repository
+     * @param string $userField
+     * @return bool
+     */
+    public function isOwner($repository, $userField = 'user_id')
+    {
+        return $repository->$userField == auth()->user()->id;
+    }
+
+    /**
+     * Gets user's data from specified repository
+     *
+     * @param $repository
+     * @param int $userId
+     * @param string $userField
+     * @return bool
+     */
+    public function userData($repository, $userId = 0, $userField = 'user_id')
+    {
+        if ($userId) {
+            return $repository->findAll()->where($userField, $userId);
+        }
+
+        return $repository->findAll()->where($userField, auth()->user()->id);
+    }
+
+    /**
      * create and redirects to last page
      *
      * @param $repository
@@ -44,13 +74,17 @@ class Controller extends BaseController
      */
     public function createAndRedirect($repository, $data)
     {
+        // clean data from XSS attacks
+        safe($data);
+
         list($status, $instance) = $repository->create($data);
 
         if (!$status) {
             return Redirect::back()->withErrors($instance->errors());
         }
 
-        Flash::success(self::ADD_MESSAGE);
+        //Flash::success(self::ADD_MESSAGE);
+        Alert::success(self::ADD_MESSAGE, 'Success')->autoclose(3000);
 
         return Redirect::back();
     }
@@ -64,13 +98,16 @@ class Controller extends BaseController
      */
     public function updateAndRedirect($repository, $data)
     {
+        // clean data from XSS attacks
+        safe($data);
+        
         list($status, $instance) = $repository->update($repository->id, $data);
 
         if (!$status) {
             return Redirect::back()->withErrors($instance->errors());
         }
 
-        Flash::success(self::UPDATE_MESSAGE);
+        Alert::success(self::UPDATE_MESSAGE, 'Success')->autoclose(3000);
 
         return Redirect::back();
     }
@@ -89,7 +126,7 @@ class Controller extends BaseController
             return Redirect::back()->withErrors($instance->errors());
         }
 
-        Flash::success(self::DELETE_MESSAGE);
+        Alert::success(self::DELETE_MESSAGE, 'Success')->autoclose(3000);
 
         return Redirect::back();
     }

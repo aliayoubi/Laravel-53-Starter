@@ -3,12 +3,10 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Iatstuti\Database\Support\CascadeSoftDeletes;
-use Iatstuti\Database\Support\OwnsModels;
 use LaravelArdent\Ardent\Ardent;
 
 class BaseModel extends Ardent
 {
-    use OwnsModels;             // to identify resource owner
     use CascadeSoftDeletes;     // to be used along with LV's SoftDelete trait.
 
     // purgable fields
@@ -26,18 +24,6 @@ class BaseModel extends Ardent
     public function __construct($attributes = [])
     {
         parent::__construct($attributes);
-    }
-
-    /**
-     * Used mostly in edit actions of controllers to check whether logged user owns model record.
-     *
-     * @param $repository
-     * @param string $userField
-     * @return bool
-     */
-    public function isOwner($repository, $userField = 'user_id')
-    {
-        return $repository->$userField == auth()->user()->id;
     }
 
     ############################################################

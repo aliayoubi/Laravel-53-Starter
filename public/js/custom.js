@@ -12,9 +12,7 @@ $(function () {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-
-    $.material.init();
-
+    
     var $dataTable = $('.dataTable');
 
     // avoid onkeyup search in datatables filter, use Enter button instead

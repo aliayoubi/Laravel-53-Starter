@@ -16,14 +16,8 @@
 
     <title>{{config('app.name')}}</title>
 
-    <!-- Material Design fonts -->
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
-
     {!! Packer::css([
     '/css/plugins/bootstrap/css/bootstrap.min.css',
-    '/css/plugins/material-design/bootstrap-material-design.min.css',
-    '/css/plugins/material-design/ripples.min.css',
     '/css/plugins/font-awesome-4/css/font-awesome.min.css',
     '/js/plugins/datatables/datatables.bootstrap.css',
     '/js/plugins/datatables/responsive/responsive.dataTables.min.css',

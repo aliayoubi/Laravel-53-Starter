@@ -20,15 +20,21 @@ class TasksController extends Controller
     {
         $title = 'Dashboard';
 
-        return view('pages.dashboard.index', compact('title'));
+        // get logged-in user's date
+        $repository = $this->userData($this->repository);
+
+        return view('pages.dashboard.index', compact('title', 'repository'));
     }
 
     // create
     public function store(Request $request)
     {
         $data = $request->all();
+        
+        // add "user_id" also to $data
         $this->addLoggedUser($data);
-
+        
+        // create and redirect by showing flash message
         return $this->createAndRedirect($this->repository, $data);
     }
 }
