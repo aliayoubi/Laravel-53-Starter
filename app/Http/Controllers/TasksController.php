@@ -39,12 +39,9 @@ class TasksController extends Controller
     // update task "complete" status
     public function complete(Task $task)
     {
-        // update only if logged user is owner of this record
-        if ($this->isOwner($task)) {
-            $task->completed = $task->completed == 1 ? 0 : 1;
+        $task->completed = $task->completed == 1 ? 0 : 1;
 
-            return $this->updateRecord($this->repository, $task);
-        }
+        return $this->updateRecord($this->repository, $task);
     }
 
     // edit page
@@ -61,18 +58,12 @@ class TasksController extends Controller
     // update
     public function update(Task $task)
     {
-        // update only if logged user is owner of this record
-        if ($this->isOwner($task)) {
-            return $this->updateRecord($this->repository, $task);
-        }
+        return $this->updateRecord($this->repository, $task);
     }
 
     // delete
     public function destroy(Task $task)
     {
-        // delete only if logged user is owner of this record
-        if ($this->isOwner($task)) {
-            return $this->deleteRecord($this->repository, $task);
-        }
+        return $this->deleteRecord($this->repository, $task);
     }
 }
