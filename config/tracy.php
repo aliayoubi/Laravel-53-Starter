@@ -10,8 +10,8 @@ return [
     'maxDepth' => 4,
     'maxLength' => 1000,
     'scream' => true,
-    'showLocation' => true,
-    'strictMode' => true,
+    'showLocation' => false,
+    'strictMode' => false,
     'editorMapping' => [],
     'panels' => [
         'routing' => false,

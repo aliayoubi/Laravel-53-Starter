@@ -1,3 +1,4 @@
+<div class="clearfix">&nbsp;</div>
 <footer class="footer">
     <div class="container">
         <p class="text-muted">&copy; {{date('Y')}} <a href="/">{{config('app.name')}}</a> - All rights reserved.</p>

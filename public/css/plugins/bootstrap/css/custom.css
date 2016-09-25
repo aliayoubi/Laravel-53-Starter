@@ -292,7 +292,6 @@ table {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
-    margin: 50px auto;
 }
 
 thead {
@@ -303,11 +302,8 @@ thead {
 
 thead th {
     font-family: 'Patua One', cursive;
-    font-size: 14px;
-    font-weight: bold;
     color: #666;
     text-align: left;
-    padding: 20px;
     background-image: linear-gradient(#eee, #ddd);
 }
 
@@ -325,10 +321,9 @@ thead th:last-child {
 
 tbody tr td {
     font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
     color: #5f6062;
     font-size: 13px;
-    padding: 20px 20px 20px 20px;
+    vertical-align: bottom !important;
 }
 
 tbody tr:nth-child(2n) {

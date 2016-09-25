@@ -8,7 +8,7 @@
 
     <!-- The above 3 meta tags *must* come first in the head -->
     <meta name="description" content="{{config('app.name')}}">
-    <meta name="author" content="{{config('app.name')}}">
+    <meta name="author" content="Sarfraz Ahmed">
     <link rel="shortcut icon" href="/favicon.ico">
 
     <!-- CSRF Token -->
@@ -37,6 +37,6 @@
     @stack('styles')
 
     <script>
-        window.Laravel = <?php echo json_encode(['csrfToken' => csrf_token()]); ?>
+        window.Laravel = <?=json_encode(['csrfToken' => csrf_token()]); ?>
     </script>
 </head>

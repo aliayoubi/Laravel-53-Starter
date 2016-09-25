@@ -8,7 +8,7 @@
         <li><a data-toggle="tab" href="#new_task"><i class="fa fa-plus-square"></i> Create Task</a></li>
     </ul>
 
-    <div class="tab-content padded">
+    <div class="tab-content">
         <div id="tasks" class="tab-pane fade in active">
             {!! $dataTable->table(['class' => 'table table-striped table-bordered table-hover dt-responsive nowrap']) !!}
         </div>
