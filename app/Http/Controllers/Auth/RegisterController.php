@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Alert;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Notifications\UserWasRegistered;
 use App\Repositories\UserRepository;
+use Flash;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Validator;
 
@@ -65,7 +67,7 @@ class RegisterController extends Controller
     {
         $repository = new UserRepository;
 
-        list($status, $instance) = $repository->create([
+        list($status, $user) = $repository->create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
@@ -73,9 +75,12 @@ class RegisterController extends Controller
 
         // send ^notification^ email if user was created successfully
         if ($status) {
-            $instance->notify(new UserWasRegistered($instance));
+            $user->notify(new UserWasRegistered($user));
+
+            Flash::success('Your account has been reated successfully!');
+            Alert::success($user->name, 'Welcome!')->persistent('Close');
         }
 
-        return $instance;
+        return $user;
     }
 }
