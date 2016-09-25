@@ -20,7 +20,7 @@ Route::get('home', 'HomeController')->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('dashboard', 'TasksController@index')->name('dashboard');
-    Route::post('tasks/store', 'TasksController@store')->name('task.store');
+    Route::post('tasks', 'TasksController@store')->name('task.store');
     Route::get('tasks/{task}/edit', 'TasksController@edit')->name('task.edit');
     Route::patch('tasks/{task}', 'TasksController@update')->name('task.update');
     Route::delete('tasks/{task}', 'TasksController@destroy')->name('task.destroy');

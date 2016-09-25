@@ -2,7 +2,7 @@
 <body>
 @include('layouts/partials/nav')
 
-<div class="container">
+<div class="container col-md-12 mainbody">
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
@@ -14,7 +14,7 @@
                     <div>{!! Breadcrumbs::render() !!}</div>
                 @endif
 
-                <div class="panel-body ">
+                <div class="panel-body main-content">
                     @include('flash::message')
                     @include('shared.errors')
                     @include('shared.loader')

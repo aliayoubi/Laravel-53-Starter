@@ -43,8 +43,8 @@ class UserWasRegistered extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject('Welcome to ' . config('app.name'))
-            ->line('Congratulations ' . $this->user->name . '!')
+            ->subject('Welcome To ' . config('app.name'))
+            ->greeting('Congratulations ' . $this->user->name . '!')
             ->line('You are now registered user at ' . config('app.name'))
             ->action('Visit ' . config('app.name'), url('/'))
             ->line('Thank you for registering!');

@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Auth\AuthenticationException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Session\TokenMismatchException;
 
@@ -18,7 +19,7 @@ class Handler extends ExceptionHandler
         \Illuminate\Auth\AuthenticationException::class,
         \Illuminate\Auth\Access\AuthorizationException::class,
         \Symfony\Component\HttpKernel\Exception\HttpException::class,
-        \Illuminate\Database\Eloquent\ModelNotFoundException::class,
+        ///\Illuminate\Database\Eloquent\ModelNotFoundException::class,
         \Illuminate\Session\TokenMismatchException::class,
         \Illuminate\Validation\ValidationException::class,
     ];
@@ -45,8 +46,8 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        // show 404 page for not found errors
         if ($this->isHttpException($exception)) {
-
             switch ($exception->getStatusCode()) {
                 case 404:
                     return \Response::view('errors.404', array(), 404);
@@ -56,11 +57,17 @@ class Handler extends ExceptionHandler
             return $this->renderHttpException($exception);
         }
 
+        // redirect user back in case of token mismatch error
         if ($exception instanceof TokenMismatchException) {
             return redirect()
                 ->back()
                 ->withInput($request->except('password', '_token'))
                 ->withError('Validation Token has expired. Please try again');
+        }
+
+        // show 404 page in case of ModelNotFoundException error
+        if ($exception instanceof ModelNotFoundException) {
+            return \Response::view('errors.404', array(), 404);
         }
 
         return parent::render($request, $exception);

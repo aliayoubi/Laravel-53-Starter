@@ -27,6 +27,8 @@ class Controller extends BaseController
     /**
      * Check whether logged user owns model record.
      *
+     * Seems to be much simpler approach than using Laravel Gates or Policies.
+     *
      * @param $model
      * @param string $userField
      * @return bool

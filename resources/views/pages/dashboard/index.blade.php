@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    {{$title}}
-@endsection
+@section('title', $title)
 
 @section('content')
     <ul class="nav nav-tabs">

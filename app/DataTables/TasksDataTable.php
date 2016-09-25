@@ -2,10 +2,15 @@
 
 namespace App\DataTables;
 
+use App\Presenters\TaskPresenter;
+use App\Repositories\TaskRepository;
 use Yajra\Datatables\Services\DataTable;
 
 class TasksDataTable extends DataTable
 {
+    // our repository to be used in this DataTable
+    protected $repository = TaskRepository::class;
+
     /**
      * Display ajax response.
      *
@@ -14,8 +19,13 @@ class TasksDataTable extends DataTable
     public function ajax()
     {
         return $this->datatables
-            ->eloquent($this->query())
+            ->of($this->query())
             //->addColumn('action', 'path.to.action.view')
+            ->editColumn('completed', function ($object) {
+                $presentedTask = present($object, TaskPresenter::class);
+
+                return $presentedTask->completed;
+            })
             ->editColumn('action', function ($object) {
                 $actions = '';
 
@@ -35,7 +45,7 @@ class TasksDataTable extends DataTable
      */
     public function query()
     {
-        $query = auth()->user()->tasks()->latest();
+        $query = (new $this->repository)->findWhere(['user_id', auth()->user()->id]);
 
         return $this->applyScopes($query);
     }
@@ -63,7 +73,8 @@ class TasksDataTable extends DataTable
     {
         return [
             'description',
-            'created_at',
+            'completed' => ['width' => '1px'], // auto-width to content
+            'created_at' => ['width' => '180px'],
         ];
     }
 

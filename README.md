@@ -29,5 +29,6 @@ Laravel 5.3 Starter project with Bootstrap CSS framework and useful packages nee
  - Clone or download the repository
  - Run `composer install`
  - Run `php artisan vendor:publish`
+ - Update `.env` file with database details
  - Run `php artisan migrate`
  - You are done.

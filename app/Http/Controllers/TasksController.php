@@ -47,12 +47,12 @@ class TasksController extends Controller
     // edit page
     public function edit(Task $task)
     {
-        // show only if logged user is owner of this record
-        if ($this->isOwner($task)) {
-            $title = 'Edit Task';
+        $title = 'Edit Task';
 
-            return view('pages.dashboard.edit', compact('title', 'task'));
-        }
+        // show only if logged user is owner of this record
+        $this->isOwner($task);
+
+        return view('pages.dashboard.edit', compact('title', 'task'));
     }
 
     // update
@@ -64,6 +64,9 @@ class TasksController extends Controller
     // delete
     public function destroy(Task $task)
     {
+        // delete only if logged user is owner of this record
+        $this->isOwner($task);
+
         return $this->deleteRecord($this->repository, $task);
     }
 }
