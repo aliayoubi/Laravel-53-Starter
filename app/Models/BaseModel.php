@@ -31,17 +31,17 @@ class BaseModel extends Ardent
     ############################################################
     public function getCreatedAtAttribute($attr)
     {
-        return Carbon::parse($attr)->format('d F, Y - h:i');
+        return Carbon::parse($attr)->format('d F, Y H:i');
     }
 
     public function getUpdateAtAttribute($attr)
     {
-        return Carbon::parse($attr)->format('d F, Y - h:i');
+        return Carbon::parse($attr)->format('d F, Y H:i');
     }
 
     public function getDeletedAtAttribute($attr)
     {
-        return Carbon::parse($attr)->format('d F, Y - h:i');
+        return Carbon::parse($attr)->format('d F, Y H:i');
     }
     ############################################################
 }

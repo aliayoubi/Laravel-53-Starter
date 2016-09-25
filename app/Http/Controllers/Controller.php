@@ -43,7 +43,7 @@ class Controller extends BaseController
     }
 
     /**
-     * create and redirects to last page
+     * create a record and optionally redirect back
      *
      * @param $repository
      * @param array $data
@@ -62,7 +62,7 @@ class Controller extends BaseController
     }
 
     /**
-     * update and redirects to last page
+     * update a record and optionally redirect back
      *
      * @param $repository
      * @param $model
@@ -77,7 +77,7 @@ class Controller extends BaseController
     }
 
     /**
-     * deletes a model record
+     * deletes a record and optionally redirect back
      *
      * @param $repository
      * @param $model
@@ -105,16 +105,18 @@ class Controller extends BaseController
                 return Redirect::back()->withErrors($instance->errors());
             }
 
+            // in case of ajax, etc
             return $instance->errors();
         }
-
-        Flash::success($message);
-        Alert::success($message, 'Success!')->autoclose(5000);
-
+        
         if ($redirectBack) {
+            Flash::success($message);
+            Alert::success($message, 'Success!')->autoclose(5000);
+
             return Redirect::back();
         }
 
+        // in case of ajax, etc
         return $status;
     }
 }

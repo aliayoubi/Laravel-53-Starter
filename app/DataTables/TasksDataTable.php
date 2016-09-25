@@ -91,7 +91,6 @@ class TasksDataTable extends DataTable
             'autoWidth' => config('custom.autoWidth'),
             'responsive' => true,
             'bLengthChange' => false,
-            //'dom' => 'Bfrtip',
             //'order' => [[0, 'desc']],
             'buttons' => [],
         ];

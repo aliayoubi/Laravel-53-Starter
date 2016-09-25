@@ -9,10 +9,9 @@ use Illuminate\Http\Request;
 
 class TasksController extends Controller
 {
-    // our repository to be used in entire controller
     protected $repository = null;
 
-    // assign our model repository for the controller
+    // our repository to be used in entire controller
     public function __construct(TaskRepository $repository)
     {
         $this->repository = $repository;
