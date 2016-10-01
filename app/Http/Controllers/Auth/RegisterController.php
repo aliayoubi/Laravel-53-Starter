@@ -77,7 +77,7 @@ class RegisterController extends Controller
         if ($status) {
             $user->notify(new UserWasRegistered($user));
 
-            Flash::success('Your account has been reated successfully!');
+            Flash::success('Your account has been created successfully!');
             Alert::success($user->name, 'Welcome!')->persistent('Close');
         }
 
