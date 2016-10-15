@@ -113,7 +113,7 @@ function listingEditButton($link, $title = 'Edit')
 {
     $html = <<< HTML
     <a data-placement="top" data-tooltip data-original-title="$title" class="edit_btn" href="$link">
-        <b class="btn btn-info btn-sm glyphicon glyphicon-pencil"></b>
+        <b class="btn btn-primary btn-sm glyphicon glyphicon-pencil"></b>
     </a>
 HTML;
 

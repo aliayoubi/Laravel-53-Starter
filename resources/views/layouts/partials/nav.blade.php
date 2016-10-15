@@ -16,7 +16,7 @@
                 <li class="{{active(['/', 'home'])}}"><a href="/"><i class="glyphicon glyphicon-home"></i> Home</a></li>
 
                 @if (Auth::check())
-                    <li class="{{active(['dashboard'])}}"><a href="{{route('dashboard')}}">Dashboard</a></li>
+                    <li class="{{active(['dashboard'])}}"><a href="{{route('dashboard')}}"><i class="glyphicon glyphicon-dashboard"></i> Dashboard</a></li>
                 @endif
             </ul>
 

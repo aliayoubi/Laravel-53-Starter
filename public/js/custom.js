@@ -74,9 +74,12 @@ $(function () {
         var activeTab = $('[href=' + selected_tab + ']');
         activeTab && activeTab.tab('show');
     }
-
 });
 
+$(window).load(function () {
+    // so that popup do not go behind overlay
+    $('.main-content').removeClass('animated');
+});
 
 // confirm delete
 $('body').on('click', '.confirm-delete', function (e) {

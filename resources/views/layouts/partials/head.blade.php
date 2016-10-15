@@ -18,7 +18,6 @@
 
     {!! Packer::css([
     '/css/plugins/bootstrap/css/bootstrap.min.css',
-    '/css/plugins/bootstrap/css/bootstrap-theme.min.css',
     '/css/plugins/bootstrap/css/custom.css',
     '/css/plugins/font-awesome-4/css/font-awesome.min.css',
     '/css/plugins/checkbox3.min.css',
