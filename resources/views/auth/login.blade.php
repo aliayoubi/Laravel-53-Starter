@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('frontend.layout')
 
 @section('title')
     Login to Your Account
@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-primary">
-                    <div class="panel-heading"><i class="glyphicon glyphicon-lock"></i> Login Details</div>
+                    <div class="panel-heading"><i class="glyphicon glyphicon-lock"></i> Please Sign In</div>
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                             {{ csrf_field() }}

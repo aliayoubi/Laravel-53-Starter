@@ -16,3 +16,9 @@ Breadcrumbs::register('task.edit', function ($breadcrumbs) {
     $breadcrumbs->parent('dashboard');
     $breadcrumbs->push('Edit Task');
 });
+
+#########################################################################
+# DON'T EDIT BELOW THS LINE
+#########################################################################
+
+require(__DIR__ . '/breadcrumbs_backend.php');

@@ -1,31 +1,41 @@
 <?php
 
-### auth routes ###
-Auth::routes();
+Route::group(['namespace' => 'Frontend'], function () {
 
-### for logs ###
-Route::get('applogs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+    ### auth routes ###
+    Auth::routes();
 
-#===========================================================#
-### PUBLIC ROUTES START ###
+    ### for logs ###
+    Route::get('applogs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
-Route::get('/', 'HomeController')->name('home');
-Route::get('home', 'HomeController')->name('home');
+    #===========================================================#
+    ### PUBLIC ROUTES START ###
 
-### PUBLIC ROUTES END ###
-#===========================================================#
+    Route::get('/', 'HomeController')->name('home');
+    Route::get('home', 'HomeController')->name('home');
 
-#===========================================================#
-### AUTHENTICATED ROUTES START ###
+    ### PUBLIC ROUTES END ###
+    #===========================================================#
 
-Route::group(['middleware' => 'auth'], function () {
-    Route::get('dashboard', 'TasksController@index')->name('dashboard');
-    Route::post('tasks', 'TasksController@store')->name('task.store');
-    Route::get('tasks/{task}/edit', 'TasksController@edit')->name('task.edit');
-    Route::patch('tasks/{task}', 'TasksController@update')->name('task.update');
-    Route::delete('tasks/{task}', 'TasksController@destroy')->name('task.destroy');
-    Route::get('tasks/{task}/complete', 'TasksController@complete')->name('task.complete');
+    #===========================================================#
+    ### AUTHENTICATED ROUTES START ###
+
+    Route::group(['middleware' => 'auth'], function () {
+        Route::get('dashboard', 'TasksController@index')->name('dashboard');
+        Route::post('tasks', 'TasksController@store')->name('task.store');
+        Route::get('tasks/{task}/edit', 'TasksController@edit')->name('task.edit');
+        Route::patch('tasks/{task}', 'TasksController@update')->name('task.update');
+        Route::delete('tasks/{task}', 'TasksController@destroy')->name('task.destroy');
+        Route::get('tasks/{task}/complete', 'TasksController@complete')->name('task.complete');
+    });
+
+    ### AUTHENTICATED ROUTES END ###
+    #===========================================================#
 });
 
-### AUTHENTICATED ROUTES END ###
-#===========================================================#
+###############################################################################
+
+# DON'T EDIT BELOW THS LINE
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin'], function () {
+    require(__DIR__ . '/web_backend.php');
+});
