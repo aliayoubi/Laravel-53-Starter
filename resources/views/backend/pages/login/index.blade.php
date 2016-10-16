@@ -36,7 +36,7 @@
     </script>
 </head>
 
-<body>
+<body class="animated fadeIn">
 
 <div class="container">
     <div class="row">
@@ -47,7 +47,7 @@
                     <i class="glyphicon glyphicon-lock"></i> Please Sign In
                 </div>
 
-                <div class="panel-body animated fadeIn">
+                <div class="panel-body">
                     @include('shared.errors')
 
                     <form role="form" method="POST" action="{{ url('admin/login') }}">

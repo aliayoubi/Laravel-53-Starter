@@ -1,5 +1,5 @@
 @include('frontend/partials/head')
-<body>
+<body class="animated fadeIn">
 @include('frontend/partials/nav')
 
 <div class="container main">
@@ -14,7 +14,7 @@
                     <div>{!! Breadcrumbs::render() !!}</div>
                 @endif
 
-                <div class="panel-body main-content animated fadeIn">
+                <div class="panel-body main-content">
                     @include('flash::message')
                     @include('shared.errors')
                     @include('shared.loader')

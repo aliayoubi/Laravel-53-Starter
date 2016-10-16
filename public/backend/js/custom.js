@@ -82,11 +82,6 @@ $(function () {
     }
 });
 
-$(window).load(function () {
-    // so that popup do not go behind overlay
-    $('.main-content').removeClass('animated');
-});
-
 // confirm delete
 $('body').on('click', '.confirm-delete', function (e) {
     var label = $(this).data('label');
