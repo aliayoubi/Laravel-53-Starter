@@ -6,7 +6,7 @@ Route::group(['namespace' => 'Frontend'], function () {
     Auth::routes();
 
     ### for logs ###
-    Route::get('applogs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+    Route::get('__applogs__', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
     #===========================================================#
     ### PUBLIC ROUTES START ###
@@ -35,7 +35,10 @@ Route::group(['namespace' => 'Frontend'], function () {
 
 ###############################################################################
 
+
+###############################################################################
 # DON'T EDIT BELOW THS LINE
+###############################################################################
 Route::group(['namespace' => 'Backend', 'prefix' => 'admin'], function () {
     require(__DIR__ . '/web_backend.php');
 });
