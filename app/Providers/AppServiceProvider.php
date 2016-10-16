@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use DB;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +14,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        if (env('APP_ENV', 'local') !== 'local') {
+            // disable query caching
+            DB::disableQueryLog();
+            DB::connection()->disableQueryLog();
+            // disable clockwork
+            config('clockwork.enable', false);
+        }
     }
 
     /**
