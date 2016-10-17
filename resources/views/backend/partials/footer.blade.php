@@ -1,8 +1,6 @@
 <footer class="pull-left footer">
-    <p class="col-md-12">
     <hr class="divider">
     Copyright &COPY; 2017 <a target="_blank" href="https://codeinphp.github.io/">Simple Bootstrap Admin</a>
-    </p>
 </footer>
 
 <!-- Scripts -->
