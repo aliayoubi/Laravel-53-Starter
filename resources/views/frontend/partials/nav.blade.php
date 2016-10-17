@@ -18,6 +18,10 @@
                 @if (Auth::check())
                     <li class="{{active(['dashboard'])}}"><a href="{{route('dashboard')}}"><i class="glyphicon glyphicon-dashboard"></i> Dashboard</a></li>
                 @endif
+
+                @if(Auth::check() && Auth::user()->isAdmin())
+                    <li><a target="_blank" href="{{route('admin_panel')}}"><i class="glyphicon glyphicon-cog"></i> Admin Panel</a></li>
+                @endif
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
