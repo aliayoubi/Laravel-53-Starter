@@ -33,7 +33,6 @@ class User extends BaseModel implements AuthenticatableContract, CanResetPasswor
         'name',
         'email',
         'password',
-        'admin',
     ];
 
     /**
