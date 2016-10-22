@@ -26,8 +26,8 @@
 
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::guest())
-                    <li class="{{active('login')}}"><a href="{{ url('/login') }}"><i class="glyphicon glyphicon-log-in"></i> Login</a></li>
-                    <li class="{{active('register')}}"><a href="{{ url('/register') }}"><i class="glyphicon glyphicon-user"></i> Register</a></li>
+                    <li class="{{active('login')}}"><a href="{{ url('/login') }}"><i class="glyphicon glyphicon-log-in"></i> Sign In</a></li>
+                    <li class="{{active('register')}}"><a href="{{ url('/register') }}"><i class="glyphicon glyphicon-user"></i> Create Account</a></li>
                 @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -39,7 +39,7 @@
                                 <a href="{{ url('/logout') }}"
                                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                    <i class="glyphicon glyphicon-log-out"></i> Logout
+                                    <i class="glyphicon glyphicon-log-out"></i> Sign Out
                                 </a>
 
                                 <form id="logout-form" action="{{ url('/logout') }}" method="POST"

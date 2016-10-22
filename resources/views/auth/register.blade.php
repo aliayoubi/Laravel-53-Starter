@@ -1,14 +1,14 @@
 @extends('frontend.layout')
 
 @section('title')
-    Register Your Account
+    Create Account
 @endsection
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-primary">
-                    <div class="panel-heading"><i class="glyphicon glyphicon-user"></i> Registration Details</div>
+                    <div class="panel-heading"><i class="glyphicon glyphicon-user"></i> Account Details</div>
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                             {{ csrf_field() }}
@@ -73,12 +73,15 @@
                             </div>
 
                             <div class="col-md-offset-4 col-md-6">
-                                <button type="submit" class="btn btn-success btn-raised">
-                                    <i class="fa fa-paper-plane"></i> Register
+                                <button type="submit" class="btn btn-block btn-success btn-raised">
+                                    <i class="fa fa-paper-plane"></i> Sign Up
                                 </button>
                             </div>
                         </form>
                     </div>
+                </div>
+                <div class="well text-center">
+                    <strong><i class="fa fa-info-circle"></i> Already have an account? <a href="{{ url('/login') }}">Sign In</a></strong>
                 </div>
             </div>
         </div>

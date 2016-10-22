@@ -44,7 +44,7 @@
 
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <i class="glyphicon glyphicon-lock"></i> Please Sign In
+                    <i class="glyphicon glyphicon-lock"></i> Account Details
                 </div>
 
                 <div class="panel-body">
@@ -87,6 +87,9 @@
                     </form>
 
                 </div>
+            </div>
+            <div class="well text-center">
+                <strong><i class="fa fa-info-circle"></i> Don't have an account? <a href="{{ url('/register') }}">Sign Up</a></strong>
             </div>
         </div>
     </div>

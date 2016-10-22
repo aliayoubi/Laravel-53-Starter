@@ -64,7 +64,7 @@
                         <li class="dropdown-header">SETTINGS</li>
                         <li class=""><a href="#"><i class="glyphicon glyphicon-edit"></i> Edit Profile</a></li>
                         <li class="divider"></li>
-                        <li><a href="{{route('admin_logout')}}"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
+                        <li><a href="{{route('admin_logout')}}"><i class="glyphicon glyphicon-log-out"></i> Sign Out</a></li>
                     </ul>
                 </li>
             </ul>
