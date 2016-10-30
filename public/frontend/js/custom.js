@@ -13,6 +13,9 @@ $(function () {
         }
     });
 
+    // faster page load
+    $('a.fastpage').fastpage();
+
     var $dataTable = $('.dataTable');
 
     // avoid onkeyup search in datatables filter, use Enter button instead

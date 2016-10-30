@@ -8,12 +8,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/"><i class="fa fa-code"></i> {{config('app.name')}}</a>
+            <a class="navbar-brand fastpage" href="/"><i class="fa fa-code"></i> {{config('app.name')}}</a>
         </div>
 
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="{{active(['/', 'home'])}}"><a href="/"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+                <li class="{{active(['/', 'home'])}}"><a class="fastpage" href="/"><i class="glyphicon glyphicon-home"></i> Home</a></li>
 
                 @if (Auth::check())
                     <li class="{{active(['dashboard'])}}"><a href="{{route('dashboard')}}"><i class="glyphicon glyphicon-dashboard"></i> Dashboard</a></li>

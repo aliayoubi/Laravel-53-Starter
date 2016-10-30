@@ -17,6 +17,7 @@
 '/common/js/plugins/jquery.pulsate.min.js',
 '/common/js/plugins/sweetalert/dist/sweetalert.min.js',
 '/common/js/plugins/select2/select2.full.min.js',
+'/common/js/plugins/fastpage.jquery.js',
 '/frontend/js/custom.js',
 ],
 '/storage/frontend/cache/js/')
