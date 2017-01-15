@@ -164,6 +164,17 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
+         * Application Service Providers...
+         */
+        App\Providers\AppServiceProvider::class,
+        App\Providers\BroadcastServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
+        App\Providers\DirectiveServiceProvider::class,
+        App\Providers\HelperServiceProvider::class,
+
+        /*
          * Package Service Providers...
          */
 
@@ -181,16 +192,6 @@ return [
         Recca0120\LaravelTracy\ServiceProvider::class,
         Themsaid\MailPreview\MailPreviewServiceProvider::class,
         Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
-
-        /*
-         * Application Service Providers...
-         */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\BroadcastServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
-        App\Providers\DirectiveServiceProvider::class,
 
     ],
 
