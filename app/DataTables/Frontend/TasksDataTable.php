@@ -29,7 +29,7 @@ class TasksDataTable extends DataTable
             ->editColumn('action', function ($object) {
                 $actions = '';
 
-                $actions .= $this->listingMarkCompleteButton(route('task.complete', [$object->id]), $object->completed);
+                $actions .= $this->buttonMarkComplete(route('task.complete', [$object->id]), $object->completed);
                 $actions .= listingEditButton(route('task.edit', [$object->id]));
                 $actions .= listingDeleteButton(route('task.destroy', [$object->id]), 'Task');
 
@@ -106,8 +106,7 @@ class TasksDataTable extends DataTable
         return 'tasksdatatables_' . time();
     }
 
-    // complete status button
-    protected function listingMarkCompleteButton($link, $status)
+    protected function buttonMarkComplete($link, $status)
     {
         $title = $status == 0 ? 'Mark as complete' : 'Mark as un-complete';
         $type = $status == 0 ? 'default' : 'success';
