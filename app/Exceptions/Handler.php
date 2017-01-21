@@ -67,7 +67,11 @@ class Handler extends ExceptionHandler
 
         // show 404 page in case of ModelNotFoundException error
         if ($exception instanceof ModelNotFoundException) {
-            return \Response::view('errors.404', array(), 404);
+            //return \Response::view('errors.404', array(), 404);
+
+            return redirect()->back()->withErrors([
+                'error' => 'Invaid Resource!'
+            ]);
         }
 
         return parent::render($request, $exception);
