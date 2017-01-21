@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend\Auth;
 
 use Alert;
+use Auth;
 use App\Http\Controllers\Frontend\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -53,7 +54,7 @@ class LoginController extends Controller
 
         if ($this->guard()->attempt($credentials, $request->has('remember'))) {
             // success
-            Alert::message('Welcome Back!');
+            Alert::message(Auth::user()->name . '!', 'Welcome!');
             
             // save visit log
             VisitLog::save();
