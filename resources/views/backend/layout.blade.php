@@ -6,7 +6,7 @@
     @include('backend/partials/sidebar')
 
     <div class="col-md-10 content">
-        <div class="panel panel--{{$errors->any() ? 'danger' : 'default'}}">
+        <div class="panel panel-{{$errors->any() ? 'danger' : 'default'}}">
             <div class="panel-heading">
                 <b class="fa fa-th-large"></b> @yield('title')
             </div>
